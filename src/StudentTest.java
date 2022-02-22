@@ -12,7 +12,7 @@ public class StudentTest {
   @Test
   public void testGetAvgRating() {
 
-    assertEquals(Student.getAvgRating(), 0.0d, "Average rating is wrong");
+    assertEquals(Student.getAvgRating(students), 0.0d, "Average rating is wrong");
 
     Student student1 = new Student("Petro");
     student1.setRating(15);
@@ -22,7 +22,7 @@ public class StudentTest {
     students.add(student1);
     students.add(student2);
 
-    assertEquals(Student.getAvgRating(), 22.5d, "Average rating is wrong");
+    assertEquals(Student.getAvgRating(students), 22.5d, "Average rating is wrong");
   }
 
   @Test
@@ -102,7 +102,7 @@ public class StudentTest {
   @Test
   public void testChangeRating() {
 
-    assertEquals(Student.getAvgRating(), 0.0d, "Average rating is wrong");
+    assertEquals(Student.getAvgRating(students), 0.0d, "Average rating is wrong");
 
     Student student1 = new Student("Petro");
     student1.setRating(15);
@@ -114,11 +114,11 @@ public class StudentTest {
 
     students.add(student2);
 
-    assertEquals(Student.getAvgRating(), 22.5d, "Average rating is wrong");
+    assertEquals(Student.getAvgRating(students), 22.5d, "Average rating is wrong");
 
     student2.changeRating(51);
 
-    assertEquals(Student.getAvgRating(), 33.0d, "Average rating is wrong");
+    assertEquals(Student.getAvgRating(students), 33.0d, "Average rating is wrong");
   }
 
   @Test
